@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(./gradlew :composeApp:run:*)",
+      "Bash(./gradlew :composeApp:wasmJsBrowserRun:*)",
+      "Bash(./gradlew:*)"
+    ]
+  }
+}
