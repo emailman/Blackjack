@@ -39,7 +39,7 @@ private fun StatItem(label: String, value: String) {
         Text(
             text = label,
             color = BlackjackColors.TextOnFelt.copy(alpha = 0.7f),
-            fontSize = 12.sp
+            fontSize = 14.sp
         )
     }
 }
