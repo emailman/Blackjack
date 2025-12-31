@@ -52,6 +52,7 @@ class BlackjackViewModel : ViewModel() {
 
             if (newState.phase == GamePhase.RESULT) {
                 updateStatistics(newState.result, betAmount)
+                showResultAfterDelay()
             }
         }
     }
@@ -69,6 +70,7 @@ class BlackjackViewModel : ViewModel() {
 
             if (newState.phase == GamePhase.RESULT) {
                 updateStatistics(newState.result, newState.currentBet)
+                showResultAfterDelay()
             }
         }
     }
@@ -95,6 +97,7 @@ class BlackjackViewModel : ViewModel() {
 
             _gameState.update { it.copy(isAnimating = false) }
             updateStatistics(currentState.result, currentState.currentBet)
+            showResultAfterDelay()
         }
     }
 
@@ -128,9 +131,17 @@ class BlackjackViewModel : ViewModel() {
         }
     }
 
+    private fun showResultAfterDelay() {
+        viewModelScope.launch {
+            delay(RESULT_OVERLAY_DELAY)
+            _gameState.update { it.copy(showResultOverlay = true) }
+        }
+    }
+
     companion object {
         private const val CARD_DEAL_DELAY = 300L
         private const val CARD_FLIP_DELAY = 500L
         private const val DEALER_PLAY_DELAY = 800L
+        private const val RESULT_OVERLAY_DELAY = 2000L
     }
 }

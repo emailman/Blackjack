@@ -132,7 +132,8 @@ class BlackjackGame {
             dealerHand = Hand(),
             currentBet = 0,
             result = GameResult.NONE,
-            message = ""
+            message = "",
+            showResultOverlay = false
         )
     }
 }

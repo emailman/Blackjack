@@ -100,7 +100,7 @@ fun BlackjackScreen(
             message = gameState.message,
             onNewRound = { viewModel.newRound() },
             onQuit = { exitApplication() },
-            visible = gameState.phase == GamePhase.RESULT,
+            visible = gameState.showResultOverlay,
             modifier = Modifier.fillMaxSize()
         )
     }

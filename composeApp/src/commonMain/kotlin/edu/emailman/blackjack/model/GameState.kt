@@ -24,7 +24,8 @@ data class GameState(
     val playerChips: Int = DEFAULT_STARTING_CHIPS,
     val result: GameResult = GameResult.NONE,
     val message: String = "",
-    val isAnimating: Boolean = false
+    val isAnimating: Boolean = false,
+    val showResultOverlay: Boolean = false
 ) {
     companion object {
         const val DEFAULT_STARTING_CHIPS = 1000
